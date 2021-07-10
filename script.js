@@ -3,6 +3,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Prompt user
 window.prompt("Please enter a password length:");
+var input = prompt("Please enter a password length:");
+prompt;
+
+if (input < 8 || input > 128) {
+  alert("Please enter a number between 7 and 129.");
+  return;
+}
 
 // Arrays
 var specialCharacters = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
@@ -12,6 +19,8 @@ var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K
 var result;
 var possibleCharacters = [];
 var guaranteedCharacters = [];
+
+
 
 // Generate password function
 function generatePassword {
