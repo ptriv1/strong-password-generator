@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-prompt(message, "Please enter a password length:");
+window.prompt("Please enter a password length:");
 
 // Write password to the #password input
 function writePassword() {
