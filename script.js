@@ -1,6 +1,17 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var special;
+var numeric;
+var upperCase;
+var lowerCase;
+var specialIndex;
+var randomSpecial;
+var numericIndex;
+var randomNumeric;
+var upperCaseIndex;
+var randomUpperCase;
+var randomLowerCase;
 
 // Prompt user
 var input = function() {
@@ -16,43 +27,20 @@ var input = function() {
     window.alert("Input must be between 7 and 129!")
     return;
   } else {
-      var special = window.prompt("Use special characters");
-      var numeric = window.prompt("Use numeric characters");
-      var upperCase = window.prompt("Use uppercase characters");
-      var lowerCase = window.prompt("Use lowercase characters");
+      special = window.prompt("Use special characters");
+      numeric = window.prompt("Use numeric characters");
+      upperCase = window.prompt("Use uppercase characters");
+      lowerCase = window.prompt("Use lowercase characters");
       
       if (!special || !numeric || !upperCase || !lowerCase) {
         window.alert("Password must use special, numeric, uppercase, or lowercase characters!") 
         return;
-      } else if (special || numeric || upperCase || lowerCase) {
-        if (special) {
-          guaranteedCharacters = specialCharacters.concat(possibleCharacters);
-          var specialIndex = Math.floor(Math.random() * specialCharacters.length);
-          var randomSpecial = possibleCharacters[specialIndex];
-          guaranteedCharacters.push(randomSpecial);
-        }
-        else if (numeric) {
-          guaranteedCharacters = numericCharacters.concat(possibleCharacters);
-          var numericIndex = Math.floor(Math.random() * numericCharacters.length);
-          var randomNumeric = possibleCharacters[numericIndex];
-          guaranteedCharacters.push(randomNumeric);
-        } else if (upperCase) {
-          guaranteedCharacters = upperCasedCharacters.concat(possibleCharacters);
-          var upperCaseIndex = Math.floor(Math.random() * upperCasedCharacters.length);
-          var randomUpperCased = possibleCharacters[upperCaseIndex];
-          guaranteedCharacters.push(randomUpperCase);
-        } else if (lowerCase) {
-          guaranteedCharacters = lowerCasedCharacters.concat(possibleCharacters);
-          var lowerCaseIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
-          var randomLowerCase = possibleCharacters[lowerCaseIndex];
-          guaranteedCharacters.push(randomLowerCase);
-        }
       }
 
-      }
     }
+  }
 
-}
+
 
 input();
 
@@ -64,6 +52,34 @@ var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K
 var result;
 var possibleCharacters = [];
 var guaranteedCharacters = [];
+
+function generatePassword() {
+  if (special || numeric || upperCase || lowerCase) {
+    if (special) {
+      guaranteedCharacters = specialCharacters.concat(possibleCharacters);
+      specialIndex = Math.floor(Math.random() * specialCharacters.length);
+      randomSpecial = possibleCharacters[specialIndex];
+      guaranteedCharacters.push(randomSpecial);
+    }
+    else if (numeric) {
+      guaranteedCharacters = numericCharacters.concat(possibleCharacters);
+      numericIndex = Math.floor(Math.random() * numericCharacters.length);
+      randomNumeric = possibleCharacters[numericIndex];
+      guaranteedCharacters.push(randomNumeric);
+    } else if (upperCase) {
+      guaranteedCharacters = upperCasedCharacters.concat(possibleCharacters);
+      upperCaseIndex = Math.floor(Math.random() * upperCasedCharacters.length);
+      randomUpperCase = possibleCharacters[upperCaseIndex];
+      guaranteedCharacters.push(randomUpperCase);
+    } else if (lowerCase) {
+      guaranteedCharacters = lowerCasedCharacters.concat(possibleCharacters);
+      lowerCaseIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
+      randomLowerCase = possibleCharacters[lowerCaseIndex];
+      guaranteedCharacters.push(randomLowerCase);
+    }
+  }
+
+}
 
 // Write password to the #password input
 function writePassword() {
