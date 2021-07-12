@@ -11,9 +11,9 @@ var input = function() {
   if (!userInput) {
     return;
   }
+}
 
-
-
+input();
 
 // Arrays
 var specialCharacters = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
@@ -24,10 +24,6 @@ var result;
 var possibleCharacters = [];
 var guaranteedCharacters = [];
 
-
-
-
- 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword(); 
