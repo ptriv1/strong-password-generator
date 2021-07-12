@@ -30,7 +30,22 @@ var input = function() {
           var specialIndex = Math.floor(Math.random() * specialCharacters.length);
           var randomSpecial = possibleCharacters[specialIndex];
           guaranteedCharacters.push(randomSpecial);
-
+        }
+        else if (numeric) {
+          guaranteedCharacters = numericCharacters.concat(possibleCharacters);
+          var numericIndex = Math.floor(Math.random() * numericCharacters.length);
+          var randomNumeric = possibleCharacters[numericIndex];
+          guaranteedCharacters.push(randomNumeric);
+        } else if (upperCase) {
+          guaranteedCharacters = upperCasedCharacters.concat(possibleCharacters);
+          var upperCaseIndex = Math.floor(Math.random() * upperCasedCharacters.length);
+          var randomUpperCased = possibleCharacters[upperCaseIndex];
+          guaranteedCharacters.push(randomUpperCase);
+        } else if (lowerCase) {
+          guaranteedCharacters = lowerCasedCharacters.concat(possibleCharacters);
+          var lowerCaseIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
+          var randomLowerCase = possibleCharacters[lowerCaseIndex];
+          guaranteedCharacters.push(randomLowerCase);
         }
       }
 
