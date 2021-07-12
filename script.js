@@ -6,6 +6,7 @@ var generateBtn = document.querySelector("#generate");
 var input = function() {
   // Ask user for their choice
   var userInput = window.prompt("Please enter a password length:");
+  var userInput = parseInt(userInput);
 
   // If user pressed Cancel, immediately end function
   if (!userInput) {
@@ -23,6 +24,16 @@ var input = function() {
       if (!special || !numeric || !upperCase || !lowerCase) {
         window.alert("Password must use special, numeric, uppercase, or lowercase characters!") 
         return;
+      } else if (special || numeric || upperCase || lowerCase) {
+        if (special) {
+          guaranteedCharacters = specialCharacters.concat(possibleCharacters);
+          var specialIndex = Math.floor(Math.random() * specialCharacters.length);
+          var randomSpecial = possibleCharacters[specialIndex];
+          guaranteedCharacters.push(randomSpecial);
+
+        }
+      }
+
       }
     }
 
