@@ -9,8 +9,23 @@ var input = function() {
 
   // If user pressed Cancel, immediately end function
   if (!userInput) {
+    window.alert("Input must be a number!");
     return;
-  }
+  } else if (userInput < 8 || userInput > 128) {
+    window.alert("Input must be between 7 and 129!")
+    return;
+  } else {
+      var special = window.prompt("Use special characters");
+      var numeric = window.prompt("Use numeric characters");
+      var upperCase = window.prompt("Use uppercase characters");
+      var lowerCase = window.prompt("Use lowercase characters");
+      
+      if (!special || !numeric || !upperCase || !lowerCase) {
+        window.alert("Password must use special, numeric, uppercase, or lowercase characters!") 
+        return;
+      }
+    }
+
 }
 
 input();
