@@ -56,29 +56,30 @@ var guaranteedCharacters = [];
 function generatePassword() {
   if (special || numeric || upperCase || lowerCase) {
     if (special) {
-      guaranteedCharacters = specialCharacters.concat(possibleCharacters);
+      specialCharacters = specialCharacters.concat(possibleCharacters);
       specialIndex = Math.floor(Math.random() * specialCharacters.length);
       randomSpecial = possibleCharacters[specialIndex];
       guaranteedCharacters.push(randomSpecial);
+      
     }
     else if (numeric) {
-      guaranteedCharacters = numericCharacters.concat(possibleCharacters);
+      numericCharacters = numericCharacters.concat(possibleCharacters);
       numericIndex = Math.floor(Math.random() * numericCharacters.length);
       randomNumeric = possibleCharacters[numericIndex];
       guaranteedCharacters.push(randomNumeric);
     } else if (upperCase) {
-      guaranteedCharacters = upperCasedCharacters.concat(possibleCharacters);
+      upperCasedCharacters = upperCasedCharacters.concat(possibleCharacters);
       upperCaseIndex = Math.floor(Math.random() * upperCasedCharacters.length);
       randomUpperCase = possibleCharacters[upperCaseIndex];
       guaranteedCharacters.push(randomUpperCase);
     } else if (lowerCase) {
-      guaranteedCharacters = lowerCasedCharacters.concat(possibleCharacters);
+      lowerCasedCharacters = lowerCasedCharacters.concat(possibleCharacters);
       lowerCaseIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
       randomLowerCase = possibleCharacters[lowerCaseIndex];
       guaranteedCharacters.push(randomLowerCase);
     }
   }
-
+  
 }
 
 // Write password to the #password input
