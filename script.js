@@ -1,15 +1,19 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Prompt user
-window.prompt("Please enter a password length:");
-var input = prompt("Please enter a password length:");
-prompt;
 
-if (input < 8 || input > 128) {
-  alert("Please enter a number between 7 and 129.");
-  return;
-}
+// Prompt user
+var input = function() {
+  // Ask user for their choice
+  var userInput = window.prompt("Please enter a password length:");
+
+  // If user pressed Cancel, immediately end function
+  if (!userInput) {
+    return;
+  }
+
+
+
 
 // Arrays
 var specialCharacters = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
@@ -22,14 +26,11 @@ var guaranteedCharacters = [];
 
 
 
-// Generate password function
-function generatePassword {
 
-}
-
+ 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword(); 
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
