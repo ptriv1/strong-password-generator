@@ -81,7 +81,7 @@ function generatePassword() {
 }
 
 
-for (i = 0; guaranteedCharacters.length < userInput.length; i++) {
+for (i = 0; i < userInput; i++) {
   var resultIndex = Math.floor(Math.random() * possibleCharacters.length);
   result.push(resultIndex);
 }
