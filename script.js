@@ -32,10 +32,10 @@ var input = function() {
     window.alert("Input must be between 7 and 129!")
     return;
   } else {
-      special = window.prompt("Use special characters");
-      numeric = window.prompt("Use numeric characters");
-      upperCase = window.prompt("Use uppercase characters");
-      lowerCase = window.prompt("Use lowercase characters");
+      special = window.confirm("Use special characters");
+      numeric = window.confirm("Use numeric characters");
+      upperCase = window.confirm("Use uppercase characters");
+      lowerCase = window.confirm("Use lowercase characters");
       
       if (!special || !numeric || !upperCase || !lowerCase) {
         window.alert("Password must use special, numeric, uppercase, or lowercase characters!") 
