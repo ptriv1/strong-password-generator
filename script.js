@@ -88,7 +88,7 @@ function generatePassword() {
 
 for (i = 0; i < userInput; i++) {
   resultIndex = Math.floor(Math.random() * possibleCharacters.length);
-  result.push(resultIndex);
+  guaranteedCharacters.push(possibleCharacters[resultIndex]); 
   console.log(resultIndex);
 }
 
