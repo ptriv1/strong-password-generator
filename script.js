@@ -61,27 +61,37 @@ var guaranteedCharacters = [];
 function generatePassword() {
   if (special || numeric || upperCase || lowerCase) {
     if (special) {
-      possibleCharacters.concat(specialCharacters);
+      possibleCharacters = possibleCharacters.concat(specialCharacters);
       specialIndex = Math.floor(Math.random() * specialCharacters.length);
       randomSpecial = possibleCharacters[specialIndex];
       guaranteedCharacters.push(randomSpecial); 
-    } else if (numeric) {
-      possibleCharacters.concat(numericCharacters);
+    }  
+    
+    if (numeric) {
+      possibleCharacters = possibleCharacters.concat(numericCharacters);
       numericIndex = Math.floor(Math.random() * numericCharacters.length);
       randomNumeric = possibleCharacters[numericIndex];
       guaranteedCharacters.push(randomNumeric);
-    } else if (upperCase) {
-      possibleCharacters.concat(upperCasedCharacters);
+    }  
+    
+    if (upperCase) {
+      possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
       upperCaseIndex = Math.floor(Math.random() * upperCasedCharacters.length);
       randomUpperCase = possibleCharacters[upperCaseIndex];
       guaranteedCharacters.push(randomUpperCase);
-    } else if (lowerCase) {
-      possibleCharacters.concat(lowerCasedCharacters);
+    }  
+    
+    if (lowerCase) {
+      possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
       lowerCaseIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
       randomLowerCase = possibleCharacters[lowerCaseIndex];
       guaranteedCharacters.push(randomLowerCase);
     }
+
+    return;
   }
+
+  
 
 }
 
