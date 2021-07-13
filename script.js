@@ -88,19 +88,19 @@ function generatePassword() {
       guaranteedCharacters.push(randomLowerCase);
     }
 
-    return;
+    for (i = 0; i < userInput; i++) {
+      resultIndex = Math.floor(Math.random() * possibleCharacters.length);
+      guaranteedCharacters.push(possibleCharacters[resultIndex]); 
+      console.log(resultIndex);
+    }
+    
+    return guaranteedCharacters;
   }
 
-  
-
 }
 
 
-for (i = 0; i < userInput; i++) {
-  resultIndex = Math.floor(Math.random() * possibleCharacters.length);
-  guaranteedCharacters.push(possibleCharacters[resultIndex]); 
-  console.log(resultIndex);
-}
+
 
 // Write password to the #password input
 function writePassword() {
