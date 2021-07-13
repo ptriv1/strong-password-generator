@@ -12,12 +12,17 @@ var randomNumeric;
 var upperCaseIndex;
 var randomUpperCase;
 var randomLowerCase;
+var resultIndex;
+
+var userInput;
+
+
 
 // Prompt user
 var input = function() {
   // Ask user for their choice
-  var userInput = window.prompt("Please enter a password length:");
-  var userInput = parseInt(userInput);
+  userInput = window.prompt("Please enter a password length:");
+  userInput = parseInt(userInput);
 
   // If user pressed Cancel, immediately end function
   if (!userInput) {
@@ -49,7 +54,7 @@ var specialCharacters = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", 
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var result;
+var result = [];
 var possibleCharacters = [];
 var guaranteedCharacters = [];
 
@@ -82,8 +87,9 @@ function generatePassword() {
 
 
 for (i = 0; i < userInput; i++) {
-  var resultIndex = Math.floor(Math.random() * possibleCharacters.length);
+  resultIndex = Math.floor(Math.random() * possibleCharacters.length);
   result.push(resultIndex);
+  console.log(resultIndex);
 }
 
 // Write password to the #password input
