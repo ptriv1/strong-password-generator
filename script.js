@@ -91,7 +91,7 @@ function generatePassword() {
       guaranteedCharacters.push(randomLowerCase);
     }
 
-    for (i = 0; i < userInput; i++) {
+    for (i = 0; i <= userInput; i++) {
       resultIndex = Math.floor(Math.random() * possibleCharacters.length);
       guaranteedCharacters.push(possibleCharacters[resultIndex]); 
       console.log(resultIndex);
