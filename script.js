@@ -94,7 +94,7 @@ function generatePassword() {
       console.log(resultIndex);
     }
     
-    return guaranteedCharacters;
+    return guaranteedCharacters.join("");
   }
 
 }
