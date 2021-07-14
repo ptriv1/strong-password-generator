@@ -37,7 +37,7 @@ var input = function() {
       upperCase = window.confirm("Use uppercase characters");
       lowerCase = window.confirm("Use lowercase characters");
       
-      if (!special || !numeric || !upperCase || !lowerCase) {
+      if (!special && !numeric && !upperCase && !lowerCase) {
         window.alert("Password must use special, numeric, uppercase, or lowercase characters!") 
         return;
       }
