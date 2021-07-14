@@ -68,6 +68,7 @@ function generatePassword() {
       specialIndex = Math.floor(Math.random() * specialCharacters.length);
       randomSpecial = possibleCharacters[specialIndex];
       guaranteedCharacters.push(randomSpecial); 
+      console.log(randomSpecial);
     }  
     
     if (numeric) {
@@ -75,6 +76,7 @@ function generatePassword() {
       numericIndex = Math.floor(Math.random() * numericCharacters.length);
       randomNumeric = possibleCharacters[numericIndex];
       guaranteedCharacters.push(randomNumeric);
+      console.log(randomNumeric);
     }  
     
     if (upperCase) {
@@ -82,6 +84,7 @@ function generatePassword() {
       upperCaseIndex = Math.floor(Math.random() * upperCasedCharacters.length);
       randomUpperCase = possibleCharacters[upperCaseIndex];
       guaranteedCharacters.push(randomUpperCase);
+      console.log(randomUpperCase);
     }  
     
     if (lowerCase) {
@@ -89,9 +92,12 @@ function generatePassword() {
       lowerCaseIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
       randomLowerCase = possibleCharacters[lowerCaseIndex];
       guaranteedCharacters.push(randomLowerCase);
+      console.log(randomLowerCase)
     }
 
     for (i = 0; i <= userInput; i++) {
+      console.log("i: ", i);
+      console.log("string length: ", guaranteedCharacters.length);
       resultIndex = Math.floor(Math.random() * possibleCharacters.length);
       guaranteedCharacters.push(possibleCharacters[resultIndex]); 
       console.log(resultIndex);
