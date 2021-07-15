@@ -19,35 +19,7 @@ var userInput;
 
 
 // Prompt user
-var input = function() {
-  // Ask user for their choice
-  userInput = window.prompt("Please enter a password length:");
-  userInput = parseInt(userInput);
 
-  // If user pressed Cancel, immediately end function
-  if (!userInput) {
-    window.alert("Input must be a number!");
-    return;
-  } else if (userInput < 8 || userInput > 128) {
-    window.alert("Input must be between 7 and 129!")
-    return;
-  } else {
-      special = window.confirm("Use special characters");
-      numeric = window.confirm("Use numeric characters");
-      upperCase = window.confirm("Use uppercase characters");
-      lowerCase = window.confirm("Use lowercase characters");
-      
-      if (!special && !numeric && !upperCase && !lowerCase) {
-        window.alert("Password must use special, numeric, uppercase, or lowercase characters!") 
-        return;
-      }
-
-    }
-  }
-
-
-
-input();
 
 // Arrays
 var specialCharacters = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
@@ -57,6 +29,37 @@ var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K
 
 
 function generatePassword() {
+  var input = function() {
+    // Ask user for their choice
+    userInput = window.prompt("Please enter a password length:");
+    userInput = parseInt(userInput);
+  
+    // If user pressed Cancel, immediately end function
+    if (!userInput) {
+      window.alert("Input must be a number!");
+      return;
+    } else if (userInput < 8 || userInput > 128) {
+      window.alert("Input must be between 7 and 129!")
+      return;
+    } else {
+        special = window.confirm("Use special characters");
+        numeric = window.confirm("Use numeric characters");
+        upperCase = window.confirm("Use uppercase characters");
+        lowerCase = window.confirm("Use lowercase characters");
+        
+        if (!special && !numeric && !upperCase && !lowerCase) {
+          window.alert("Password must use special, numeric, uppercase, or lowercase characters!") 
+          return;
+        }
+  
+      }
+    }
+  
+  
+  
+  input();
+
+
 
   var result = [];
   var possibleCharacters = [];
