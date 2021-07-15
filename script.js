@@ -12,6 +12,7 @@ var randomNumeric;
 var upperCaseIndex;
 var randomUpperCase;
 var randomLowerCase;
+var lowerCaseIndex;
 var resultIndex;
 
 var userInput;
@@ -61,7 +62,7 @@ function generatePassword() {
 
 
 
-  var result = [];
+  var resultCharacters = [];
   var possibleCharacters = [];
   var guaranteedCharacters = [];
 
@@ -112,6 +113,15 @@ function generatePassword() {
     return guaranteedCharacters.join("");
   }
 
+}
+
+for (i = 0; i < userInput; i++) {
+  resultIndex = Math.floor(Math.random() * possibleCharacters.length);
+  resultCharacters.push(possibleCharacters[resultIndex]);
+}
+
+for (i = 0; i < guaranteedCharacters.length; i++) {
+  resultCharacters[resultIndex] = guaranteedCharacters[i];
 }
 
 
