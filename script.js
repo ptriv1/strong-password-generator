@@ -66,7 +66,8 @@ function generatePassword() {
     if (special) {
       possibleCharacters = possibleCharacters.concat(specialCharacters);
       specialIndex = Math.floor(Math.random() * specialCharacters.length);
-      randomSpecial = possibleCharacters[specialIndex];
+      randomSpecial = specialCharacters[specialIndex];
+      possibleCharacters.push(randomSpecial);
       guaranteedCharacters.push(randomSpecial); 
       console.log(randomSpecial);
     }  
@@ -74,7 +75,8 @@ function generatePassword() {
     if (numeric) {
       possibleCharacters = possibleCharacters.concat(numericCharacters);
       numericIndex = Math.floor(Math.random() * numericCharacters.length);
-      randomNumeric = possibleCharacters[numericIndex];
+      randomNumeric = numericCharacters[numericIndex];
+      possibleCharacters.push(randomNumeric);
       guaranteedCharacters.push(randomNumeric);
       console.log(randomNumeric);
     }  
@@ -82,7 +84,8 @@ function generatePassword() {
     if (upperCase) {
       possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
       upperCaseIndex = Math.floor(Math.random() * upperCasedCharacters.length);
-      randomUpperCase = possibleCharacters[upperCaseIndex];
+      randomUpperCase = upperCasedCharacters[upperCaseIndex];
+      possibleCharacters.push(randomUpperCase);
       guaranteedCharacters.push(randomUpperCase);
       console.log(randomUpperCase);
     }  
@@ -90,17 +93,17 @@ function generatePassword() {
     if (lowerCase) {
       possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
       lowerCaseIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
-      randomLowerCase = possibleCharacters[lowerCaseIndex];
+      randomLowerCase = lowerCasedCharacters[lowerCaseIndex];
+      possibleCharacters.push(randomLowerCase);
       guaranteedCharacters.push(randomLowerCase);
       console.log(randomLowerCase)
     }
 
-    for (i = 0; i <= userInput; i++) {
-      console.log("i: ", i);
-      console.log("string length: ", guaranteedCharacters.length);
+    for (i = 0; i < userInput; i++) {
       resultIndex = Math.floor(Math.random() * possibleCharacters.length);
       guaranteedCharacters.push(possibleCharacters[resultIndex]); 
-      console.log(resultIndex);
+      console.log(possibleCharacters);
+      console.log(guaranteedCharacters);
     }
     
     return guaranteedCharacters.join("");
