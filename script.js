@@ -71,58 +71,52 @@ function generatePassword() {
       possibleCharacters = possibleCharacters.concat(specialCharacters);
       specialIndex = Math.floor(Math.random() * specialCharacters.length);
       randomSpecial = specialCharacters[specialIndex];
-      possibleCharacters.push(randomSpecial);
       guaranteedCharacters.push(randomSpecial); 
-      console.log(randomSpecial);
+      
     }  
     
     if (numeric) {
       possibleCharacters = possibleCharacters.concat(numericCharacters);
       numericIndex = Math.floor(Math.random() * numericCharacters.length);
       randomNumeric = numericCharacters[numericIndex];
-      possibleCharacters.push(randomNumeric);
       guaranteedCharacters.push(randomNumeric);
-      console.log(randomNumeric);
+      
     }  
     
     if (upperCase) {
       possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
       upperCaseIndex = Math.floor(Math.random() * upperCasedCharacters.length);
       randomUpperCase = upperCasedCharacters[upperCaseIndex];
-      possibleCharacters.push(randomUpperCase);
       guaranteedCharacters.push(randomUpperCase);
-      console.log(randomUpperCase);
     }  
     
     if (lowerCase) {
       possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
       lowerCaseIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
       randomLowerCase = lowerCasedCharacters[lowerCaseIndex];
-      possibleCharacters.push(randomLowerCase);
       guaranteedCharacters.push(randomLowerCase);
-      console.log(randomLowerCase)
     }
+
+    /* for (i = 0; i < userInput; i++) {
+      resultIndex = Math.floor(Math.random() * possibleCharacters.length);
+      guaranteedCharacters.push(possibleCharacters[resultIndex]); 
+    } */
 
     for (i = 0; i < userInput; i++) {
       resultIndex = Math.floor(Math.random() * possibleCharacters.length);
-      guaranteedCharacters.push(possibleCharacters[resultIndex]); 
-      console.log(possibleCharacters);
-      console.log(guaranteedCharacters);
+      resultCharacters.push(possibleCharacters[resultIndex]);
     }
+    
+    for (i = 0; i < guaranteedCharacters.length; i++) {
+      resultCharacters[resultIndex] = guaranteedCharacters[i];
+    }
+    
     
     return guaranteedCharacters.join("");
   }
 
 }
 
-for (i = 0; i < userInput; i++) {
-  resultIndex = Math.floor(Math.random() * possibleCharacters.length);
-  resultCharacters.push(possibleCharacters[resultIndex]);
-}
-
-for (i = 0; i < guaranteedCharacters.length; i++) {
-  resultCharacters[resultIndex] = guaranteedCharacters[i];
-}
 
 
 
