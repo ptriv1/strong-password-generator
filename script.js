@@ -30,7 +30,7 @@ var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K
 
 
 function generatePassword() {
-  var input = function() {
+  
     // Ask user for their choice
     userInput = window.prompt("Please enter a password length:");
     userInput = parseInt(userInput);
@@ -41,7 +41,7 @@ function generatePassword() {
       return;
     } else if (userInput < 8 || userInput > 128) {
       window.alert("Input must be between 7 and 129!")
-      return;
+      return "";
     } else {
         special = window.confirm("Use special characters");
         numeric = window.confirm("Use numeric characters");
@@ -50,17 +50,10 @@ function generatePassword() {
         
         if (!special && !numeric && !upperCase && !lowerCase) {
           window.alert("Password must use special, numeric, uppercase, or lowercase characters!") 
-          return;
+          return "";
         }
   
       }
-    }
-  
-  
-  
-  input();
-
-
 
   var resultCharacters = [];
   var possibleCharacters = [];
