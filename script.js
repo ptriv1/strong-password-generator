@@ -16,13 +16,7 @@ var randomUpperCase;
 var randomLowerCase;
 var lowerCaseIndex;
 var resultIndex;
-
 var userInput;
-
-
-
-
-
 
 // Arrays for types of characters
 var specialCharacters = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
@@ -69,15 +63,13 @@ function generatePassword() {
       specialIndex = Math.floor(Math.random() * specialCharacters.length);
       randomSpecial = specialCharacters[specialIndex];
       guaranteedCharacters.push(randomSpecial); 
-      
     }  
     
     if (numeric) {
       possibleCharacters = possibleCharacters.concat(numericCharacters);
       numericIndex = Math.floor(Math.random() * numericCharacters.length);
       randomNumeric = numericCharacters[numericIndex];
-      guaranteedCharacters.push(randomNumeric);
-      
+      guaranteedCharacters.push(randomNumeric); 
     }  
     
     if (upperCase) {
@@ -109,10 +101,6 @@ function generatePassword() {
   }
 
 }
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
