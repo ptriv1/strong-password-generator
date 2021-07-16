@@ -71,7 +71,6 @@ function generatePassword() {
       possibleCharacters = possibleCharacters.concat(specialCharacters);
       specialIndex = Math.floor(Math.random() * specialCharacters.length);
       randomSpecial = specialCharacters[specialIndex];
-      resultCharacters.push(randomSpecial);
       guaranteedCharacters.push(randomSpecial); 
       
     }  
@@ -80,7 +79,6 @@ function generatePassword() {
       possibleCharacters = possibleCharacters.concat(numericCharacters);
       numericIndex = Math.floor(Math.random() * numericCharacters.length);
       randomNumeric = numericCharacters[numericIndex];
-      resultCharacters.push(randomNumeric);
       guaranteedCharacters.push(randomNumeric);
       
     }  
@@ -89,7 +87,6 @@ function generatePassword() {
       possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
       upperCaseIndex = Math.floor(Math.random() * upperCasedCharacters.length);
       randomUpperCase = upperCasedCharacters[upperCaseIndex];
-      resultCharacters.push(randomUpperCase);
       guaranteedCharacters.push(randomUpperCase);
     }  
     
@@ -97,7 +94,6 @@ function generatePassword() {
       possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
       lowerCaseIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
       randomLowerCase = lowerCasedCharacters[lowerCaseIndex];
-      resultCharacters.push(randomLowerCase);
       guaranteedCharacters.push(randomLowerCase);
     }
 
@@ -112,11 +108,11 @@ function generatePassword() {
     }
     
     for (i = 0; i < guaranteedCharacters.length; i++) {
-      resultCharacters[resultIndex] = guaranteedCharacters[i];
+      resultCharacters[i] = guaranteedCharacters[i];
     }
     
     
-    return guaranteedCharacters.join("");
+    return resultCharacters.join("");
   }
 
 }
